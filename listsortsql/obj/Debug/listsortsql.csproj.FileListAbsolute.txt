@@ -1,0 +1,11 @@
+F:\repos\listsortsql\listsortsql\bin\Debug\listsortsql.exe.config
+F:\repos\listsortsql\listsortsql\bin\Debug\listsortsql.exe
+F:\repos\listsortsql\listsortsql\bin\Debug\listsortsql.pdb
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.csproj.AssemblyReference.cache
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.csproj.SuggestedBindingRedirects.cache
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.csproj.CoreCompileInputs.cache
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.exe
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.pdb
+F:\repos\listsortsql\listsortsql\bin\Debug\Newtonsoft.Json.dll
+F:\repos\listsortsql\listsortsql\bin\Debug\Newtonsoft.Json.xml
+F:\repos\listsortsql\listsortsql\obj\Debug\listsortsql.csproj.CopyComplete
