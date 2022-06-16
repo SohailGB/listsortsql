@@ -61,12 +61,28 @@ namespace listsortsql
                         //open connection
                         conn.Open();
                         Console.WriteLine("Connection successful");
-
-                        SqlCommand cmd = new SqlCommand(@"INSERT INTO NumbersDB.Dbo.NumberTable(UnsortedNumber,SortedNumber,Direction) VALUES(@unsortedNumber,@sortedNumber,'4');", conn);
+                        //Insert Data
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO NumbersDB.Dbo.NumberTable(UnsortedNumber,SortedNumber,Direction,ElapsedTime) VALUES(@unsortedNumber,@sortedNumber,'4',@ElapsedTime);", conn);
                         cmd.Parameters.AddWithValue("@UnsortedNumber", unsortedNumber);
                         cmd.Parameters.AddWithValue("@SortedNumber", sortedNumber);
+                        cmd.Parameters.AddWithValue("@ElapsedTime", elapsedTime);
                         cmd.ExecuteNonQuery();
                         Console.WriteLine("Inserted Data Successfully");
+
+
+                        //Select Data
+                        Console.WriteLine("Do you want to view all previously entered database entries?");
+                        SqlCommand cmdSelect = new SqlCommand(@"SELECT Id, SortedNumber, ElapsedTime FROM NumbersDB.dbo.NumberTable", conn);
+
+
+                        using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Console.WriteLine("Id " + reader[0] + " Sorted Number " + reader[1] + " Elapsed Time " + reader[2]);
+                            }
+                        }
+
                         conn.Close();
 
                     }
@@ -80,6 +96,7 @@ namespace listsortsql
                 }
             }
 
+            
           
             Console.ReadLine();
         }
