@@ -60,6 +60,7 @@ namespace listsortsql
 
                         //open connection
                         conn.Open();
+
                         Console.WriteLine("Connection successful");
                         //Insert Data
                         SqlCommand cmd = new SqlCommand(@"INSERT INTO NumbersDB.Dbo.NumberTable(UnsortedNumber,SortedNumber,Direction,ElapsedTime) VALUES(@unsortedNumber,@sortedNumber,'4',@ElapsedTime);", conn);
@@ -71,15 +72,19 @@ namespace listsortsql
 
 
                         //Select Data
-                        Console.WriteLine("Do you want to view all previously entered database entries?");
-                        SqlCommand cmdSelect = new SqlCommand(@"SELECT Id, SortedNumber, ElapsedTime FROM NumbersDB.dbo.NumberTable", conn);
-
-
-                        using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                        Console.WriteLine("Do you want to view all previously entered database entries? Type 1 for yes");
+                        string ViewEntryCheck = Console.ReadLine();
+                        if (ViewEntryCheck == "1")
                         {
-                            while (reader.Read())
+                            SqlCommand cmdSelect = new SqlCommand(@"SELECT Id, SortedNumber, ElapsedTime FROM NumbersDB.dbo.NumberTable", conn);
+
+
+                            using (SqlDataReader reader = cmdSelect.ExecuteReader())
                             {
-                                Console.WriteLine("Id " + reader[0] + " Sorted Number " + reader[1] + " Elapsed Time " + reader[2]);
+                                while (reader.Read())
+                                {
+                                    Console.WriteLine("Id " + reader[0] + " Sorted Number " + reader[1] + " Elapsed Time " + reader[2]);
+                                }
                             }
                         }
 
