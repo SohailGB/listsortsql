@@ -113,11 +113,6 @@ namespace listsortsql
                                     Console.WriteLine("Id " + reader[0] + " Sorted Number " + reader[1] + " Direction " + direction + " Elapsed Time " + reader[3]);
                                 }
                             }
-
-                            //JSON Export
-                                //TODO
-
-
                         }
                         
                         conn.Close();
