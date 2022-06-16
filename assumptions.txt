@@ -1,0 +1,5 @@
+Assumptions:
+
+-Parametised Queries are used to prevent SQL injection attacks
+-Connection string will need to be rebuilt to use on other computers as it's set locally
+-There is a table file with the solution so you can rebuild the table

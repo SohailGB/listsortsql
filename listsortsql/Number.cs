@@ -8,11 +8,25 @@ namespace listsortsql
 {
     public class Number
     {
-        public static string ListSort(string unsortedNumber)
+        public static string ListSort(string unsortedNumber, string direction, bool boolDir)
         {
             List<int> numList = new List<int>();
             numList = unsortedNumber.Select(x => (int)char.GetNumericValue(x)).ToList();
-            numList.Sort((a, b) => a.CompareTo(b));
+            if (direction == "1")
+            {
+                numList.Sort((a, b) => a.CompareTo(b));
+                boolDir = true;
+            }
+            else if(direction == "2")
+            {
+                numList.Sort((b, a) => a.CompareTo(b));
+                boolDir = false;
+            }
+            else
+            {
+                numList.Sort((b, a) => a.CompareTo(b));
+                boolDir = false;
+            }
             string sortedNumber = string.Empty;
             foreach (int num in numList)
             {
