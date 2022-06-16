@@ -62,7 +62,7 @@ namespace listsortsql
                         conn.Open();
                         Console.WriteLine("Connection successful");
 
-                        SqlCommand cmd = new SqlCommand(@"INSERT INTO NumbersDB.Dbo.NumberTable(Id,UnsortedNumber,SortedNumber,Direction) VALUES('1',@unsortedNumber,@sortedNumber,'4');", conn);
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO NumbersDB.Dbo.NumberTable(UnsortedNumber,SortedNumber,Direction) VALUES(@unsortedNumber,@sortedNumber,'4');", conn);
                         cmd.Parameters.AddWithValue("@UnsortedNumber", unsortedNumber);
                         cmd.Parameters.AddWithValue("@SortedNumber", sortedNumber);
                         cmd.ExecuteNonQuery();
